@@ -1,16 +1,31 @@
 import express = require('express');
-var app = express();
-var port = process.env.PORT || 3000;
 
-app.get('/', (req: express.Request, res: express.Response) => {
-    res.send('Lunch Proposals App Server Test...');
-});
+export default class Server{
+    private app;
+    private port: number;
+    private server;
 
-var server = app.listen(port,() => {
+    constructor(){
+        this.app = express();
+        this.port = 3000;
+    }
 
-    let host = server.address().address
-    let port = server.address().port
+    start(){
+        this.configureApp();
+        this.server = this.app.listen(this.port,() => {
 
-    console.log("Server running at http://%s:%s", host, port)
+            let host = this.server.address().address;
+            let port = this.server.address().port;
 
-});
+            console.log("Server running at http://%s:%s", host, port)
+
+        });
+    }
+
+    configureApp(){
+        this.app.get('/', (req: express.Request, res: express.Response) => {
+            res.send('Lunch Proposals App Server Test...');
+        });
+    }
+}
+
