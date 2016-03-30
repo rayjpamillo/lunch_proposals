@@ -11,7 +11,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
 @RouteConfig([
   {path:'/login', name: 'Login', component: LoginComponent, useAsDefault: true},
-  {path:'/home', name: 'Home',       component: HomeComponent}
+  {path:'/home', name: 'Home', component: HomeComponent}
 ])
 
 export class AppComponent { }
