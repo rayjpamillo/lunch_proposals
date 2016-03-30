@@ -1,22 +1,29 @@
 <form (ngSubmit)="onSubmit()">
     <div class="row">
         <div class="input-field">
+            <i class="material-icons prefix">perm_identity</i>
             <input type="text">
             <label for="name">Name</label>
         </div>
     </div>
+
     <div class="row">
         <div class="input-field">
+            <i class="material-icons prefix">schedule</i>
             <input type="text">
             <label for="time">Proposed Time</label>
         </div>
     </div>
+
     <div class="row">
         <div class="input-field">
+            <i class="material-icons prefix">business</i>
             <input type="text">
             <label for="place">Proposed Place</label>
         </div>
     </div>
-    <button class="waves-effect waves-light right btn indigo darken-4" type="submit" name="action">Propose
+
+    <button class="waves-effect waves-light right btn indigo darken-4" type="submit" name="action">
+        Propose
     </button>
 </form>
