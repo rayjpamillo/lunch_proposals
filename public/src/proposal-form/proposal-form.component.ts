@@ -10,12 +10,11 @@ import { LunchProposal } from '../lunch-proposal';
 export class ProposalFormComponent{
     constructor( private _router: Router ) { }
 
-    model = new LunchProposal( 1200, 'kevin', ['kechan'], 'kechan', 'pantry');
+    model = new LunchProposal( '', '', '', '', [] );
 
-    goToLoginPage() {
+    onSubmit(model:LunchProposal) {
+        console.log(model);
         this._router.navigate(['Login']);
     }
-
-    onSubmit() { }
 
 }
