@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import { SocketHandler } from '../socket-handler/socket-handler';
 
 @Component({
 selector: 'proposal-list',
@@ -6,10 +7,16 @@ templateUrl: 'public/src/proposal-list/proposal-list.component.html'
 })
 
 export class ProposalListComponent {
-    proposals = [
-        {name: "Test 1", time: "11:00", place: "Jollibee"},
-        {name: "Test 2", time: "11:00", place: "Mcdonalds"},
-        {name: "Test 3", time: "11:00", place: "Bonchon"},
-        {name: "Test 4", time: "11:00", place: "Army Navy"},
-        ];
+
+    proposals;
+
+    constructor(private _socketHandler:SocketHandler){
+        this.proposals = [];
+
+        this._socketHandler.getSocket().emit('getProposals',null);
+        this._socketHandler.getSocket().on('proposalList',(data) => {
+            this.proposals = data;
+        });
+    }
+
  }
