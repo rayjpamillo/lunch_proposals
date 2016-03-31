@@ -21,7 +21,7 @@ export class LoginComponent {
         let self = this;
         this.submitted = true;
         setTimeout(function(){
-            self.router.navigate(['Home', {user: this.username}]);
+            self.router.navigate(['Home', {user: this.username.value}]);
          }, 3000);
          
     }

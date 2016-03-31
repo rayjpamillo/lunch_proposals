@@ -18,6 +18,11 @@ export class SocketServer {
             });
             socket.on('onLogin', (data) => {
                 this.user = data;
+                console.log('Logging in');
+            });
+            socket.on('onLogout', () => {
+                this.user = null;
+                console.log('Logout successs');
             });
         });
     }
