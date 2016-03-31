@@ -2,17 +2,22 @@ import {LunchProposal} from "../public/src/lunch-proposal";
 
 export class SocketServer {
 
-    lunchProposal: LunchProposal[];
+    lunchProposals: LunchProposal[];
+    user: string;
 
     constructor() {
-        this.lunchProposal = [];
+        this.lunchProposals = [];
     }
 
     connect( io ) {
         io.on('connection', (socket) => {
             socket.on('addedProposal', (data) => {
-                this.lunchProposal.push(data);
-                console.log(data);
+                data.user = this.user;
+                data.voters.push(this.user);
+                this.lunchProposals.push(data);
+            });
+            socket.on('onLogin', (data) => {
+                this.user = data;
             });
         });
     }

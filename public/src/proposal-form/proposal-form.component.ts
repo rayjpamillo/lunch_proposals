@@ -16,7 +16,6 @@ export class ProposalFormComponent{
     onSubmit(model:LunchProposal) {
         this._socketHandler.getSocket().emit("addedProposal", model);
         console.log(model);
-        this._router.navigate(['Login']);
     }
 
 }
