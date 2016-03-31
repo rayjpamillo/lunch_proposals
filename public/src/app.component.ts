@@ -12,8 +12,9 @@ import { SocketHandler } from './socket-handler/socket-handler';
 })
 
 @RouteConfig([
-  {path:'/lunchApp/login', name: 'Login', component: LoginComponent, useAsDefault: true},
-  {path:'/lunchApp/home', name: 'Home', component: HomeComponent}
+  {path:'/lunchApp/login', name: 'Login', component: LoginComponent},
+  {path:'/lunchApp/home', name: 'Home', component: HomeComponent, useAsDefault: true},
+  {path:'/**', redirectTo: ['Home'] }
 ])
 
 export class AppComponent {

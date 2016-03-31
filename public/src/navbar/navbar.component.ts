@@ -14,7 +14,7 @@ export class NavbarComponent{
      }
 
     goToLoginPage() {
-        window.localStorage['user'] = null;
+        window.localStorage.clear();
         this._router.navigate(['Login']);
     }
 }

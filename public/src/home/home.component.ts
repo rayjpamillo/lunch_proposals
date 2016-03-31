@@ -11,9 +11,14 @@ import { ProposalListComponent } from '../proposal-list/proposal-list.component'
 })
 
 export class HomeComponent{
-    constructor( private _router: Router) { 
+    constructor( private _router: Router) {
+        console.log(window.localStorage['user']);
+        if( !window.localStorage['user'] ) {
+            this._router.navigate(['Login']);
+        }
     }
 
-    ngOnInit() { }
+    ngOnInit() {
+    }
 
 }
