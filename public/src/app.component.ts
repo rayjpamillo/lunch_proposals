@@ -10,8 +10,8 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 })
 
 @RouteConfig([
-  {path:'/lunchApp/login', name: 'Login', component: LoginComponent, useAsDefault: true},
-  {path:'/lunchApp/home', name: 'Home',       component: HomeComponent}
+  {path:'/login', name: 'Login', component: LoginComponent, useAsDefault: true},
+  {path:'/home', name: 'Home', component: HomeComponent}
 ])
 
 export class AppComponent { }

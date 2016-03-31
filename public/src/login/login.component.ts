@@ -15,7 +15,11 @@ export class LoginComponent {
     }
     
     onSubmit(){
+        let self = this;
         this.submitted = true;
-        this.router.navigate(['Home']);
+        setTimeout(function(){
+            self.router.navigate(['Home']);  
+         }, 3000);
+         
     }
 }

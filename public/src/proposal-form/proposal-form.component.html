@@ -1,0 +1,30 @@
+<form (ngSubmit)="onSubmit(model)">
+    <div class="row">
+        <div class="input-field">
+            <i class="material-icons prefix">perm_identity</i>
+            <input id="name" type="text" class="validate" #name required [(ngModel)]="model.name">
+            <label for="name">Name</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <i class="material-icons prefix">schedule</i>
+            <input id="time" type="time" min="09:00:00" max="15:00:00"
+                   class="validate" required [(ngModel)]="model.time" />
+            <label for="time" class="active">Proposed Time</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field">
+            <i class="material-icons prefix">business</i>
+            <input id="place" type="text" class="validate" #place required [(ngModel)]="model.place">
+            <label for="place">Proposed Place</label>
+        </div>
+    </div>
+
+    <button class="waves-effect waves-light right btn indigo darken-4" type="submit" name="action">
+        Propose
+    </button>
+</form>
