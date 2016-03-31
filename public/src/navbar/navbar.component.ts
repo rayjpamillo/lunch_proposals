@@ -14,7 +14,7 @@ export class NavbarComponent{
      }
 
     goToLoginPage() {
-        this._socketHandler.getSocket().emit('onLogout');
+        window.localStorage['user'] = null;
         this._router.navigate(['Login']);
     }
 }

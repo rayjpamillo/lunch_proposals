@@ -3,7 +3,6 @@ import {LunchProposal} from "../public/src/lunch-proposal";
 export class SocketServer {
 
     lunchProposals: LunchProposal[];
-    user: string;
 
     constructor() {
         this.lunchProposals = [];
@@ -23,18 +22,9 @@ export class SocketServer {
                 }
                 if(!isDuplicate)
                 {
-                    data.user = this.user;
-                    data.voters.push(this.user);
                     this.lunchProposals.push(data);
+                    console.log(data);
                 }
-            });
-            socket.on('onLogin', (data) => {
-                this.user = data;
-                console.log('Logging in');
-            });
-            socket.on('onLogout', () => {
-                this.user = null;
-                console.log('Logout successs');
             });
         });
     }

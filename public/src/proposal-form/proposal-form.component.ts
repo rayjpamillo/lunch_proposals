@@ -17,6 +17,8 @@ export class ProposalFormComponent{
 
     onSubmit(model:LunchProposal) {
         this.isExisting = false;
+        this.model.user = window.localStorage['user'];
+        this.model.voters.push( this.model.user );
         this._socketHandler.getSocket().emit('addedProposal', model);
         this._socketHandler.getSocket().on('existingProposal', () => {
             this.isExisting = true;

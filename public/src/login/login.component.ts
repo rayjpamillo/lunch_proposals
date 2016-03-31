@@ -17,7 +17,7 @@ export class LoginComponent {
     
     onSubmit(){
         console.log(this.username);
-        this._socketHandler.getSocket().emit('onLogin', this.username);
+        window.localStorage['user'] = this.username;
         let self = this;
         this.submitted = true;
         setTimeout(function(){
