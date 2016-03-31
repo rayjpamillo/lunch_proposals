@@ -11,7 +11,8 @@ import { ProposalListComponent } from '../proposal-list/proposal-list.component'
 })
 
 export class HomeComponent{
-    constructor( private _router: Router ) { }
+    constructor( private _router: Router) { 
+    }
 
     ngOnInit() { }
 

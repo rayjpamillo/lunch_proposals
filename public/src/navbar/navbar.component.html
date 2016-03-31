@@ -1,8 +1,13 @@
-<nav class="indigo darken-4">
-    <div class="nav-wrapper">
-        <span> Hi Team Heneral! </span>
-        <a (click)="goToLoginPage()" class="btn-large btn-flat white-text indigo darken-4 right hide-on-med-and-down">
-            Logout
+<div class="navbar-fixed">
+    <nav class="indigo darken-4">
+    <div class="nav-wrapper">     
+        <a href="#" class="brand-logo" style="margin-left: 5px;">Welcome {{username}},
         </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a (click)="goToLoginPage()">Logout         
+             </a>
+            </li>
+      </ul>
     </div>
 </nav>
+</div>
