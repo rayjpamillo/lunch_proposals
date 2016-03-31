@@ -8,7 +8,7 @@
         <form (ngSubmit)="onSubmit()">
             <h3 class="teal-text">Login Form</h3>
             <div class="input-field">
-                <input id="username" type="text" class="validate" #username required>
+                <input id="username" type="text" class="validate" [(ngModel)]="username" required>
                 <label for="username">Username</label>
             </div>
             <div class="input-field">

@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import { Router } from 'angular2/router';
+import { Router, RouteParams } from 'angular2/router';
 
 @Component({
     selector: 'navbar',
@@ -7,7 +7,10 @@ import { Router } from 'angular2/router';
 })
 
 export class NavbarComponent{
-    constructor( private _router: Router ) { }
+    username: string;
+    constructor( private _router: Router, private params: RouteParams ) {
+        this.username = this.params.get('user');
+     }
 
     goToLoginPage() {
         this._router.navigate(['Login']);
