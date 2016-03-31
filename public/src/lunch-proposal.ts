@@ -4,6 +4,6 @@ export class LunchProposal {
         public name: string,
         public user: string,
         public place: string,
-        public voters: string[],
+        public voters: string[]
     ) {  }
 }
