@@ -1,4 +1,5 @@
 import express = require('express');
+import path = require('path');
 
 export default class Server{
     private app;
@@ -7,7 +8,7 @@ export default class Server{
 
     constructor(){
         this.app = express();
-        this.port = 3000;
+        this.port = process.env.PORT || 3000;
     }
 
     start(){
@@ -23,9 +24,11 @@ export default class Server{
     }
 
     configureApp(){
-        this.app.get('/', (req: express.Request, res: express.Response) => {
-            res.send('Lunch Proposals App Server Test...');
-        });
+
+        this.app.use('/', express.static(path.join(__dirname, '..', 'public' )));
+        this.app.use('/public', express.static(path.join(__dirname, '..', 'public' )));
+        this.app.use('/node_modules', express.static(path.join(__dirname, '..', 'node_modules' )));
+
     }
 }
 
