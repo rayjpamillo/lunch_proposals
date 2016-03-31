@@ -13,8 +13,16 @@ export class ProposalFormComponent{
 
     model = new LunchProposal( '', '', '', '', [] );
 
+    isExisting = false;
+
     onSubmit(model:LunchProposal) {
-        this._socketHandler.getSocket().emit("addedProposal", model);
+        this.isExisting = false;
+        this.model.user = window.localStorage['user'];
+        this.model.voters.push( this.model.user );
+        this._socketHandler.getSocket().emit('addedProposal', model);
+        this._socketHandler.getSocket().on('existingProposal', () => {
+            this.isExisting = true;
+        });
         console.log(model);
     }
 

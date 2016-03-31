@@ -18,5 +18,4 @@ export class ProposalListComponent {
             this.proposals = data;
         });
     }
-
  }

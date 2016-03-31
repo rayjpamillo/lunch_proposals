@@ -1,4 +1,11 @@
 <form (ngSubmit)="onSubmit(model)">
+    <h4 class="flow-text" style="margin-bottom: 20px;"><i class="material-icons left">settings</i>Proposal Form</h4>
+
+    <div [hidden]="!isExisting" class="card-panel">
+        <i class="material-icons prefix">error</i>
+        <span class="red-text">Specified lunch proposal already exists.</span>
+    </div>
+
     <div class="row">
         <div class="input-field">
             <i class="material-icons prefix">perm_identity</i>
